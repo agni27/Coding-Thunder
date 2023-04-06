@@ -1,0 +1,76 @@
+<div class="container my-5">
+  <div class="row">
+    {{#each blogs}}
+      <div class="blog col-md-4">
+        <a href="/blogpost/{{this.slug}}">
+          <div class="blog-img-container">
+            <img class="title-img" src="{{this.image}}" alt="{{this.title}}">
+          </div>
+          <div class="blog-info-container">
+            <h2>{{this.title}}</h2>
+            <p>{{this.description}}</p>
+          </div>
+        </a>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+<style>
+  .blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    width: 260px;
+  }
+
+  .blog:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+  }
+
+  .blog-img-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .blog-img-container img {
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .blog:hover .blog-img-container img {
+    transform: scale(1.2);
+  }
+
+  .blog-info-container {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .blog-info-container h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .blog-info-container p {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+  .title-img{
+    height: 50vh;
+    text-decoration: none;
+  }
+</style>
